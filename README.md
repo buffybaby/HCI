@@ -1,2 +1,2 @@
 # HCI
-Yalcin's and I's HCI Project
+Yalcin's and Bilge's HCI Project
