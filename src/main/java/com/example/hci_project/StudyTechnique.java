@@ -1,9 +1,9 @@
-package com.example;
+package com.example.hci_project;
 
 import java.util.Arrays;
 import java.util.List;
 
-public class StudyTechniqueProvider {
+public class StudyTechnique {
 
         private static final List<String> STUDY_TECHNIQUES = Arrays.asList(
         "Pomodoro (25 min study, 5 min break)",
