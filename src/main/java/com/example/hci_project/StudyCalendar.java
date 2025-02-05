@@ -14,10 +14,16 @@ public class StudyCalendar {
         studySchedule.add(subject + " - " + dateTime);
     }
 
-    public void displaySchedule() {
-        System.out.println("\n--- Study Calendar ---");
-        for (String session : studySchedule) {
-            System.out.println(session);
+    // ✅ Fix: Add this method
+    public String getSchedule() {
+        if (studySchedule.isEmpty()) {
+            return "No study sessions scheduled.";
         }
+
+        StringBuilder result = new StringBuilder("Study Calendar:\n");
+        for (String session : studySchedule) {
+            result.append(session).append("\n");
+        }
+        return result.toString();
     }
 }

@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class StudyAnalytics {
-
     private Map<String, Long> studyRecords;
 
     public StudyAnalytics() {
@@ -15,11 +14,16 @@ public class StudyAnalytics {
         studyRecords.put(subject, studyRecords.getOrDefault(subject, 0L) + minutes);
     }
 
-    public void displayAnalytics() {
-        System.out.println("\n--- Study Analytics ---");
-        for (Map.Entry<String, Long> entry : studyRecords.entrySet()) {
-            System.out.println("Subject: " + entry.getKey() + " | Total Time: " + entry.getValue() + " minutes");
+    // ✅ Fix: Add this method
+    public String getAnalytics() {
+        if (studyRecords.isEmpty()) {
+            return "No study data available.";
         }
-    }
 
+        StringBuilder result = new StringBuilder("Study Analytics:\n");
+        for (Map.Entry<String, Long> entry : studyRecords.entrySet()) {
+            result.append(entry.getKey()).append(": ").append(entry.getValue()).append(" min\n");
+        }
+        return result.toString();
+    }
 }
